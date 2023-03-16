@@ -280,3 +280,8 @@
 /home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/runtimes/win-arm/lib/net6.0/dotnet-aspnet-codegenerator-design.exe
 /home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/runtimes/win-arm64/lib/net6.0/dotnet-aspnet-codegenerator-design.exe
+/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
+/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/Mono.TextTemplating.dll
+/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/System.Text.Json.dll
+/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll

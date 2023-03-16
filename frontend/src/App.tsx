@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { Navbar } from './components/Navbar'
@@ -9,8 +9,14 @@ import { Home } from './components/Home'
 import { Dogcard } from './components/Dogcard'
 import { DogPage } from './components/DogPage'
 import { About } from './components/About'
+import { Dog } from './services/types'
 
 function App() {
+  const [Dogs, setDogs] = useState<Dog[]>();
+
+  useEffect(() => {
+
+  }, [])
 
   return (
     <div className="App">

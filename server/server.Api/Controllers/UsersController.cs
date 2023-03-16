@@ -46,7 +46,7 @@ namespace server.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
-            if (id != user.UserId)
+            if (UserExists(id))
             {
                 return BadRequest();
             }
@@ -77,6 +77,7 @@ namespace server.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
+
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
