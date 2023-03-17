@@ -27,10 +27,13 @@
     display: flex;
     margin: 0 auto;
     flex-direction: column;
-    background-image: url(https://www.elisity.com/hubfs/Imported%20images/Blob@2x.png%3Fwidth=1830%26name=Blob@2x.png);
     background-position: center;
     background-size: cover;
     position: relative;
+}
+
+.blob{
+    background-image: url(https://www.elisity.com/hubfs/Imported%20images/Blob@2x.png%3Fwidth=1830%26name=Blob@2x.png);
 }
 
 .dog-details__header > h2 {
@@ -112,9 +115,25 @@
     padding: 8px 16px;
     position: absolute;
     top: 16px;
-    right: 16px;
+    left: 16px;
     display: flex;
     justify-content: center;
+}
+
+.update-img-btn{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 13%;
+    right: 0;
+}
+
+.update-input {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
 }
 
 

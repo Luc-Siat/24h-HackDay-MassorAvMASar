@@ -9,10 +9,11 @@ type DogPageProps = {
   users: IUser[],
   sports: ISport[],
   currentUser?: IUser,
-  deleteDog: Function
+  deleteDog: Function,
+  updateDog: Function
 }
 
-export const DogDetailsPage :FC<DogPageProps> = ({ dogs, users, sports, currentUser, deleteDog }) => {
+export const DogDetailsPage :FC<DogPageProps> = ({ dogs, users, sports, currentUser, deleteDog, updateDog }) => {
 
  
   const [dog, setDog] = useState<IDog>();
@@ -20,11 +21,19 @@ export const DogDetailsPage :FC<DogPageProps> = ({ dogs, users, sports, currentU
   const { id }  = useParams();
   const [contactToggle, setContactToggle] = useState<boolean>(false);
   const [redirect, setRedirect] = useState<boolean>(false);
+  const [toggleUpdate, setToggleUpdate] = useState<boolean>(false);
+  const [newImageUrl, setNewImageUrl] = useState("");
+
 
   const toggleContact = () => {
     setContactToggle(!contactToggle);
   
   }
+
+  const updateToggle = () => {
+    setToggleUpdate(!toggleUpdate)
+  }
+
   
   useEffect(() => {
     if (!contactToggle){
@@ -39,13 +48,25 @@ export const DogDetailsPage :FC<DogPageProps> = ({ dogs, users, sports, currentU
   
   return (
     <>
-      <header className="dog-details__header">
-        {dog?.imageUrl ? <img className="dog-details__header-picture" src={dog.imageUrl} alt="picture of the dog" /> : null}
+      <header className="dog-details__header blob">
+        <div className="dog-details__header">
+          {dog?.imageUrl ? <img className="dog-details__header-picture" src={dog.imageUrl} alt="picture of the dog" /> : null}
+          {currentUser === user && (<button onClick={() => updateToggle()} className="update-img-btn"><i className="fa-solid fa-pen"></i></button>)} 
+          {(currentUser ===user && toggleUpdate) && (
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            updateDog(dog?.dogId, newImageUrl);
+          }}>
+              <input onChange={(e) => (setNewImageUrl(e.target.value))} className="update-input round-corner" placeholder="  New image url" name="imageUrl" id="imageUrl" type="text" required/>
+            </form>
+          )}
+        </div>
+
         {currentUser === user && (<button onClick={() => {
           deleteDog(dog?.dogId)
           setRedirect(true)
           
-          }} className="delete-dog-btn">Delete your dog profile</button>)} 
+          }} className="delete-dog-btn">Delete dog</button>)} 
         <h2>Hi I'm {dog?.name} 👋</h2>
       </header>
       <main className="container dog-details-main">

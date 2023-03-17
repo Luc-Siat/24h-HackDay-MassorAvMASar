@@ -29,6 +29,20 @@ export const getDogs = async () => fetch(DogsUrl, {
   .then(response => response.json())
   .then((data : IDog[]) => data);
 
+  export interface IUpdate {
+    imageUrl: string
+  }
+
+  export const updateDog = async (id: number, url: IUpdate) => {
+    const dogToJson = JSON.stringify(url); 
+    console.log(dogToJson);
+    return fetch(`${DogsUrl}/${id}`, {
+      method: 'PUT',
+      body: dogToJson,
+      headers: { 'Content-Type': 'application/json' },
+    })
+  };
+
 export const addDog = async (dog : IDog) => {
   const dogToJson = JSON.stringify(dog);
   console.log(dogToJson);

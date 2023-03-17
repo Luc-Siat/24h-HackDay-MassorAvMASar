@@ -6,7 +6,6 @@ import { FilterBar } from '../FilterBar/FilterBar'
 import './Home.css'
 import { AddDogForm } from '../AddDogForm/AddDogForm'
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { addDog, deleteDog } from '../../services/MassorAvMasarApi'
 
 type HomeProps = {
   dogs: IDog[],
@@ -23,6 +22,8 @@ export const Home : FC<HomeProps> = ({ dogs, users, sports, submitDog, currentUs
   const [sportToggle, setSportToggle] = useState<boolean>(false);
   const [breedToggle, setBreedToggle] = useState<boolean>(false);
   const [locationToggle, setLocationToggle] = useState<boolean>(false);
+  const [sentToggle, setSentToggle] = useState<boolean>(false);
+
 
   const [sportFilter, setSportFilter] = useState<number>(0);
   const [locationFilter, setLocationFilter] = useState<string>("");
@@ -49,7 +50,11 @@ export const Home : FC<HomeProps> = ({ dogs, users, sports, submitDog, currentUs
 
   const HandleSubmit = (dog : IDog) => {
     submitDog(dog);
+    setSentToggle(true);
     setAddFormToggle(!addFormToggle);
+    setTimeout(() => {
+      setSentToggle(false);
+      }, 2500)
   }
 
   const filterDogs = (dogs : IDog[]) => {
@@ -109,11 +114,12 @@ export const Home : FC<HomeProps> = ({ dogs, users, sports, submitDog, currentUs
 
       <TransitionGroup component={null}>
         {(addFormToggle && loggedIn) && (
-          <CSSTransition classNames="form" timeout={200}>
+          <CSSTransition classNames="form" timeout={300}>
             <AddDogForm sports= {sports} submitDog={HandleSubmit} />
           </CSSTransition>
         )}
         </TransitionGroup>    
+          {sentToggle && (<p className='log-sent'>Sent!</p>)}
           {(addFormToggle && !loggedIn) && (<p className='log-error'>Please log in to add your dog</p>)}
           
       <div className='pagination' ref={backToTop}>
