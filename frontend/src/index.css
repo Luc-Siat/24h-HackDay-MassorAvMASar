@@ -1,0 +1,64 @@
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+}
+#root {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    width: 70vw;
+  }
+}
+
+h1, h2, h3{
+  color: white;
+}
+
+h1 {
+  font-family: 'Ribeye marrow', cursive;
+}
+
+h2, h3{
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  color: #3D0000;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul, li {
+  color: #3D0000;
+  list-style-type: none;
+}
+
+a{
+  color: #3D0000;
+  text-decoration: none;
+}
+
+.pagination {
+  text-align: center;
+  padding: 16px 0;
+
+}
+.pagination > button {
+  border-radius: 25px;
+  border: none;
+  padding: 6px 16px;
+  margin: 8px;
+}
+.pagination > button:hover {
+  background-color: lightgray;
+}

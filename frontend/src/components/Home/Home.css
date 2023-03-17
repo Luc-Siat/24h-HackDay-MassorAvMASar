@@ -1,0 +1,20 @@
+.home-main {
+    margin: 40px auto !important ;
+}
+
+.dog-board {
+    margin: 40px auto;
+}
+
+.dog-board__header{
+    color:  #3D0000;
+}
+
+.header-content{
+    text-align: center;
+}
+
+.log-error {
+    color: red;
+    text-align: center;
+}
