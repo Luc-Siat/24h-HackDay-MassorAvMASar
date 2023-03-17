@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using server.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MassorAvMasarContext>(options =>
@@ -24,6 +26,11 @@ if (app.Environment.IsDevelopment())
             .AllowAnyMethod()
             .AllowAnyHeader();  //set the allowed origin    });
     });
+    using (var scope = app.Services.CreateScope())
+    {
+    var services = scope.ServiceProvider;
+    SeedData.Initialize(services);
+    }
 }
 
 app.UseHttpsRedirection();

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8UDjeVQTlx9LRVTIJ3MKjrEGIuo6F+OGjeBlIXC1+eiocz8qKiZUtOpMuZg9wBVs31MJSJoatB9V5MFJIV822A==",
+  "dgSpecHash": "3Yg6t9zNeHiqHSqUPBI5q+jhWhrL5cKxirLS9UAP8ACPCH+CqkbJIKyrfy6tWAN46f2zvDrpaNelih3pq1zcOQ==",
   "success": true,
   "projectFilePath": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
   "expectedPackageFiles": [
     "/home/luc/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/home/luc/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
+    "/home/luc/.nuget/packages/bogus/34.0.2/bogus.34.0.2.nupkg.sha512",
     "/home/luc/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/luc/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
     "/home/luc/.nuget/packages/messagepack.annotations/2.1.152/messagepack.annotations.2.1.152.nupkg.sha512",

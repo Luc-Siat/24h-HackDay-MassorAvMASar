@@ -1,69 +1,64 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
+  position: relative;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  min-height: 100vh;
+}
+#root {
+  width: 100vw;
+  height: 100%;
   min-height: 100vh;
 }
 
+.container {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    width: 70vw;
+  }
+}
+
+h1, h2, h3{
+  color: white;
+}
+
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: 'Ribeye marrow', cursive;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h2, h3{
+  font-family: 'Roboto', sans-serif;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+p {
+  color: #3D0000;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul, li {
+  color: #3D0000;
+  list-style-type: none;
+}
+
+a{
+  color: #3D0000;
+  text-decoration: none;
+}
+
+.pagination {
+  text-align: center;
+  padding: 16px 0;
+
+}
+.pagination > button {
+  border-radius: 25px;
+  border: none;
+  padding: 6px 16px;
+  margin: 8px;
+}
+.pagination > button:hover {
+  background-color: lightgray;
 }

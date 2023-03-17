@@ -285,3 +285,4 @@
 /home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/System.Text.Encodings.Web.dll
 /home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/System.Text.Json.dll
 /home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/bin/Debug/net6.0/Bogus.dll

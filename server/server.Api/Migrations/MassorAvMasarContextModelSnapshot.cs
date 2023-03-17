@@ -30,12 +30,13 @@ namespace server.Api.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DogId"));
 
                     b.Property<int?>("Age")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Gender")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -43,14 +44,17 @@ namespace server.Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Location")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Race")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("SportId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
@@ -90,6 +94,10 @@ namespace server.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -107,7 +115,9 @@ namespace server.Api.Migrations
                 {
                     b.HasOne("server.Api.Models.Sport", "Sport")
                         .WithMany("Dogs")
-                        .HasForeignKey("SportId");
+                        .HasForeignKey("SportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("server.Api.Models.User", "User")
                         .WithMany("Dogs")

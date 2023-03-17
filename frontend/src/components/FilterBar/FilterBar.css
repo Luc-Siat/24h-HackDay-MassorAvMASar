@@ -1,0 +1,49 @@
+.filter-bar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "location location add"
+    "races sport add";
+    gap: 8px;
+}
+
+.filter-box{
+ border-radius: 4px;
+ background-color: rgb(245, 244, 244);
+ /* background-image: linear-gradient(50deg, #FE9862 70%, #F7CE68 100%); */
+ box-sizing: border-box;
+ padding: 8px;
+ font-size: 14px;
+ border: 0;
+}
+.filter-box > h3 {
+    color: #3D0000;
+    font-weight: 400;
+    font-size: 18px;
+}
+.filter-box:hover {
+    background-color: rgb(226, 226, 226);
+    /* background-image: linear-gradient(50deg, #FE9862 100%, #F7CE68 100%); */
+}
+
+.location-filter {
+    grid-area: location;
+}
+.sport-filter {
+    grid-area: sport;
+}
+.races-filter {
+    grid-area: races;
+}
+.add-dog{
+    grid-area: add;
+    background-color: #4B644A;
+}
+
+.add-dog:hover{
+    background-color: #475e46;
+}
+.add-dog > h3 {
+    color: white;
+}

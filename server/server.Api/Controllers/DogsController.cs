@@ -77,6 +77,7 @@ namespace server.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<Dog>> PostDog(Dog dog)
         {
+            Console.WriteLine(dog);
             _context.Dogs.Add(dog);
             await _context.SaveChangesAsync();
 
