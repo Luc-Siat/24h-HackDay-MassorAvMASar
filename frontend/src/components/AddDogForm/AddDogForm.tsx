@@ -37,22 +37,22 @@ export const AddDogForm :FC<AddDogFormProps> = ({sports, submitDog}) => {
             <input className="round-corner" placeholder="  Name" id="name" type="text" required onChange={e => { setName(e.target.value); }}/>
             </div>   
 
-            <input className="w-100 round-corner" placeholder="  Image url"  id="imageUrl" type="text" onChange={e => { setImageUrl(e.target.value); }}/>
+            <input className="w-100 round-corner" required placeholder="  Image url"  id="imageUrl" type="text" onChange={e => { setImageUrl(e.target.value); }}/>
 
-            <select className="w-100 round-corner" placeholder="  Gender" id="gender" onChange={e => { setGender(e.target.value); }}>
+            <select className="w-100 round-corner" required placeholder="  Gender" id="gender" onChange={e => { setGender(e.target.value); }}>
                 <option value="Female">Female</option>
                 <option value="Male">Male</option>
             </select>
 
-            <textarea className="w-100 text-box" placeholder="  Write a bit about you"  id="text" cols={45} rows={8} onChange={e => { setDescription(e.target.value); }}/>
+            <textarea className="w-100 text-box" placeholder=" Write a bit about you"  id="text" cols={45} rows={8} onChange={e => { setDescription(e.target.value); }}/>
 
-            <input className="w-100 round-corner " placeholder="  Age" id="age" type="text" onChange={e => { setAge(+(e.target.value)); }}/>
+            <input className="w-100 round-corner " placeholder="  Age" required id="age" type="text" onChange={e => { setAge(+(e.target.value)); }}/>
 
             <input className="w-100 round-corner " placeholder=" Location" id="location" type="text" onChange={e => { setLocation(e.target.value); }}/>
 
-            <input className="w-100 round-corner " placeholder="  Breed" id="breed" type="text" onChange={e => { setBreed(e.target.value); }}/>
+            <input className="w-100 round-corner " placeholder="  Breed" required id="breed" type="text" onChange={e => { setBreed(e.target.value); }}/>
 
-            <select className="w-100 round-corner" placeholder="  Sport" name="sportId" id="sportId" onChange={e => setSportId(+(e.target.value))}>
+            <select className="w-100 round-corner" placeholder="  Sport" required name="sportId" id="sportId" onChange={e => setSportId(+(e.target.value))}>
             <option value="">Favorite dog sport</option>
             {sports.map(sport => <option key={sport.sportId} value={sport.sportId}>{sport.name}</option> )}
             </select>

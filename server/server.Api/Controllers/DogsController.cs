@@ -44,14 +44,17 @@ namespace server.Api.Controllers
         // PUT: api/Dog/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutDog(int id, Dog dog)
+        public async Task<IActionResult> PutDog(int id, DogUpdate dog)
         {
-            if (id != dog.DogId)
-            {
-                return BadRequest();
-            }
+            var fetchedDog = await _context.Dogs.FindAsync(id);
 
-            _context.Entry(dog).State = EntityState.Modified;
+            if (fetchedDog == null) 
+            {
+                return NotFound();
+            }
+            
+            fetchedDog.ImageUrl = dog.ImageUrl;
+            _context.Entry(fetchedDog).State = EntityState.Modified;
 
             try
             {
