@@ -1,6 +1,5 @@
 import React, { FC, SyntheticEvent, useState} from 'react'
 import { Navigate, redirect } from 'react-router-dom';
-import { users } from 'unsplash-js/dist/internals';
 import { IUser } from '../../services/types';
 import './login.css'
 
