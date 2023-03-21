@@ -1,9 +1,11 @@
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using server.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<MassorAvMasarContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext")));
 
 
 // Add services to the container.
@@ -20,33 +22,25 @@ if (app.Environment.IsDevelopment())
 {
     // builder.Services.AddDbContext<MassorAvMasarContext>(options =>
     //     options.UseSqlServer(builder.Configuration.GetConnectionString("MassorAvMasarContext")));
-
-      var conStrBuilder = new SqlConnectionStringBuilder(
-        builder.Configuration.GetConnectionString("MassorAvMasarContext"));
-
-    var connection = conStrBuilder.ConnectionString;
-}
-if (app.Environment.IsProduction())
-{
-    // builder.Services.AddDbContext<MassorAvMasarContext>(options =>
-    //     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext"))); 
-
-    var conStrBuilder = new SqlConnectionStringBuilder(
-    builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext"));
-    var connection = conStrBuilder.ConnectionString;
-}
     app.UseSwagger();
     app.UseSwaggerUI();
     app.UseCors(policy =>    {      
         policy.AllowAnyOrigin()
             .AllowAnyMethod()
-            .AllowAnyHeader();
+            .AllowAnyHeader();  //set the allowed origin    });
     });
-    // using (var scope = app.Services.CreateScope())
-    // {
-    // var services = scope.ServiceProvider;
+
+    using (var scope = app.Services.CreateScope())
+    {
+    var services = scope.ServiceProvider;
     // SeedData.Initialize(services);
-    // }
+    }
+}
+// if (app.Environment.IsProduction())
+// {
+//     builder.Services.AddDbContext<MassorAvMasarContext>(options =>
+//         options.UseSqlServer(builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext")));
+// }
 
 app.UseHttpsRedirection();
 
