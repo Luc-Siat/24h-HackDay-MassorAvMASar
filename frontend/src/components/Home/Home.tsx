@@ -33,7 +33,7 @@ export const Home : FC<HomeProps> = ({ dogs, users, sports, submitDog, currentUs
 
   const [currentPage, setCurrentPage] = useState(1);
   const [currentDogs, setCurrentDogs] = useState<number[]>([0, 10]);
-  const backToTop = useRef();
+  // const backToTop = useRef();
   
   const toggleForm = () => {
     setAddFormToggle(!addFormToggle);
