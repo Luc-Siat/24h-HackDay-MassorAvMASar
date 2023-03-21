@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3Yg6t9zNeHiqHSqUPBI5q+jhWhrL5cKxirLS9UAP8ACPCH+CqkbJIKyrfy6tWAN46f2zvDrpaNelih3pq1zcOQ==",
+  "dgSpecHash": "WUMKwsFkyRqbS8gRqDjJ9tWV2O8iAH7ljJ20bf4OdjGZ8aXkTihQBV8eBML1CW9PxN0X1taxGkOtY3DalgLwvw==",
   "success": true,
-  "projectFilePath": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
+  "projectFilePath": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
   "expectedPackageFiles": [
     "/home/luc/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/home/luc/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
@@ -192,7 +192,10 @@
     "/home/luc/.nuget/packages/system.threading.timer/4.3.0/system.threading.timer.4.3.0.nupkg.sha512",
     "/home/luc/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512",
     "/home/luc/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "/home/luc/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512"
+    "/home/luc/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
+    "/home/luc/.nuget/packages/microsoft.netcore.app.ref/6.0.15/microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
+    "/home/luc/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.15/microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
+    "/home/luc/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.15/microsoft.netcore.app.host.linux-x64.6.0.15.nupkg.sha512"
   ],
   "logs": []
 }

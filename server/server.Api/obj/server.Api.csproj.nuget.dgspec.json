@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj": {}
+    "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj": {}
   },
   "projects": {
-    "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj": {
+    "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
+        "projectUniqueName": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
         "projectName": "server.Api",
-        "projectPath": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
+        "projectPath": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
         "packagesPath": "/home/luc/.nuget/packages/",
-        "outputPath": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/obj/",
+        "outputPath": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/luc/.nuget/NuGet/NuGet.Config"
@@ -72,6 +72,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.15, 6.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.15, 6.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.15, 6.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -80,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/luc/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }
