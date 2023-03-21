@@ -23,12 +23,12 @@ if (app.Environment.IsDevelopment())
     // builder.Services.AddDbContext<MassorAvMasarContext>(options =>
     //     options.UseSqlServer(builder.Configuration.GetConnectionString("MassorAvMasarContext")));
 
+}
     using (var scope = app.Services.CreateScope())
     {
     var services = scope.ServiceProvider;
     SeedData.Initialize(services);
     }
-}
     app.UseSwagger();
     app.UseSwaggerUI();
     app.UseCors(policy =>    {      
