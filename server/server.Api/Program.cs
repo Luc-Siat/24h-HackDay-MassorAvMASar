@@ -1,3 +1,4 @@
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using server.Data;
@@ -17,14 +18,23 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    builder.Services.AddDbContext<MassorAvMasarContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("MassorAvMasarContext")));
+    // builder.Services.AddDbContext<MassorAvMasarContext>(options =>
+    //     options.UseSqlServer(builder.Configuration.GetConnectionString("MassorAvMasarContext")));
+
+      var conStrBuilder = new SqlConnectionStringBuilder(
+        builder.Configuration.GetConnectionString("MassorAvMasarContext"));
+
+    var connection = conStrBuilder.ConnectionString;
     app.UseSwagger();
     app.UseSwaggerUI();
+}
 if (app.Environment.IsProduction())
 {
-    builder.Services.AddDbContext<MassorAvMasarContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext"))); 
+    // builder.Services.AddDbContext<MassorAvMasarContext>(options =>
+    //     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext"))); 
+
+    var conStrBuilder = new SqlConnectionStringBuilder(
+    builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext"));
 }
     app.UseCors(policy =>    {      
         policy.AllowAnyOrigin()
@@ -36,7 +46,6 @@ if (app.Environment.IsProduction())
     var services = scope.ServiceProvider;
     SeedData.Initialize(services);
     }
-}
 
 app.UseHttpsRedirection();
 
