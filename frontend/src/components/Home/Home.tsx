@@ -33,7 +33,7 @@ export const Home : FC<HomeProps> = ({ dogs, users, sports, submitDog, currentUs
 
   const [currentPage, setCurrentPage] = useState(1);
   const [currentDogs, setCurrentDogs] = useState<number[]>([0, 10]);
-  const backToTop = useRef();
+  // const backToTop = useRef();
   
   const toggleForm = () => {
     setAddFormToggle(!addFormToggle);
@@ -70,11 +70,11 @@ export const Home : FC<HomeProps> = ({ dogs, users, sports, submitDog, currentUs
     }  if ( num === 0 ) {
       setCurrentPage(currentPage - 1);
       setCurrentDogs([(currentDogs[0] -10),(currentDogs[1] -10)])
-      backToTop.current.scrollIntoView()
+      // backToTop.current.scrollIntoView()
     } if ( num === 1 ) {
       setCurrentPage(currentPage + 1);
       setCurrentDogs([(currentDogs[0] + 10),(currentDogs[1] + 10)])
-      backToTop.current.scrollIntoView()
+      // backToTop.current.scrollIntoView()
     }
   }
 
@@ -122,7 +122,8 @@ export const Home : FC<HomeProps> = ({ dogs, users, sports, submitDog, currentUs
           {sentToggle && (<p className='log-sent'>Sent!</p>)}
           {(addFormToggle && !loggedIn) && (<p className='log-error'>Please log in to add your dog</p>)}
           
-      <div className='pagination' ref={backToTop}>
+      <div className='pagination' >
+      {/* ref={backToTop} */}
         <button  onClick={()=> handlePagination(0)}>Prev</button>- {currentPage} - <button onClick={()=> handlePagination(1)}>Next</button>
       </div>  
       
