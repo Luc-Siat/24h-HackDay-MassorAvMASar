@@ -1,7 +1,8 @@
 body {
   position: relative;
-  margin: 0;
+  margin: 0 auto;
   min-height: 100vh;
+  width: 50vw;
 }
 #root {
   /* width: 100vw; */
@@ -10,14 +11,14 @@ body {
 }
 
 .container {
-  width: 90vw;
+  width: 50vw;
   margin-left: auto;
   margin-right: auto;
 }
 
 @media screen and (min-width: 769px) {
   .container {
-    width: 70vw;
+    width: 40vw;
   }
 }
 
