@@ -21,16 +21,16 @@ if (app.Environment.IsDevelopment())
         options.UseSqlServer(builder.Configuration.GetConnectionString("MassorAvMasarContext")));
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors(policy =>    {      
-        policy.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader();  //set the allowed origin    });
-    });
 if (app.Environment.IsProduction())
 {
     builder.Services.AddDbContext<MassorAvMasarContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext"))); 
 }
+    app.UseCors(policy =>    {      
+        policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();  //set the allowed origin    });
+    });
     using (var scope = app.Services.CreateScope())
     {
     var services = scope.ServiceProvider;
