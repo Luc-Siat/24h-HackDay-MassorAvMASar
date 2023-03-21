@@ -4,8 +4,6 @@ using server.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<MassorAvMasarContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MassorAvMasarContext")));
 
 // Add services to the container.
 
@@ -19,6 +17,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    builder.Services.AddDbContext<MassorAvMasarContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("MassorAvMasarContext")));
     app.UseSwagger();
     app.UseSwaggerUI();
     app.UseCors(policy =>    {      
@@ -26,6 +26,11 @@ if (app.Environment.IsDevelopment())
             .AllowAnyMethod()
             .AllowAnyHeader();  //set the allowed origin    });
     });
+if (app.Environment.IsProduction())
+{
+    builder.Services.AddDbContext<MassorAvMasarContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext"))); 
+}
     using (var scope = app.Services.CreateScope())
     {
     var services = scope.ServiceProvider;
