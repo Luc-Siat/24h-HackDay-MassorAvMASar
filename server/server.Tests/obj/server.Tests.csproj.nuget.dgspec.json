@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Tests/server.Tests.csproj": {}
+    "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Tests/server.Tests.csproj": {}
   },
   "projects": {
-    "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj": {
+    "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
+        "projectUniqueName": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
         "projectName": "server.Api",
-        "projectPath": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
+        "projectPath": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj",
         "packagesPath": "/home/luc/.nuget/packages/",
-        "outputPath": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/obj/",
+        "outputPath": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/luc/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,24 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[34.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0-preview.2.23128.3, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -54,6 +72,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.15, 6.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.15, 6.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.15, 6.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -62,18 +94,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/luc/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Tests/server.Tests.csproj": {
+    "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Tests/server.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Tests/server.Tests.csproj",
+        "projectUniqueName": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Tests/server.Tests.csproj",
         "projectName": "server.Tests",
-        "projectPath": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Tests/server.Tests.csproj",
+        "projectPath": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Tests/server.Tests.csproj",
         "packagesPath": "/home/luc/.nuget/packages/",
-        "outputPath": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Tests/obj/",
+        "outputPath": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/luc/.nuget/NuGet/NuGet.Config"
@@ -88,8 +120,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj": {
-                "projectPath": "/home/luc/salt/weekå10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj"
+              "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj": {
+                "projectPath": "/home/luc/salt/week´10-HackDay/MassorAvMasar/server/server.Api/server.Api.csproj"
               }
             }
           }
@@ -136,12 +168,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.15, 6.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.15, 6.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/luc/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }
