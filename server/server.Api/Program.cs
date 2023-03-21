@@ -25,8 +25,6 @@ if (app.Environment.IsDevelopment())
         builder.Configuration.GetConnectionString("MassorAvMasarContext"));
 
     var connection = conStrBuilder.ConnectionString;
-    app.UseSwagger();
-    app.UseSwaggerUI();
 }
 if (app.Environment.IsProduction())
 {
@@ -35,17 +33,20 @@ if (app.Environment.IsProduction())
 
     var conStrBuilder = new SqlConnectionStringBuilder(
     builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext"));
+    var connection = conStrBuilder.ConnectionString;
 }
+    app.UseSwagger();
+    app.UseSwaggerUI();
     app.UseCors(policy =>    {      
         policy.AllowAnyOrigin()
             .AllowAnyMethod()
-            .AllowAnyHeader();  //set the allowed origin    });
+            .AllowAnyHeader();
     });
-    using (var scope = app.Services.CreateScope())
-    {
-    var services = scope.ServiceProvider;
-    SeedData.Initialize(services);
-    }
+    // using (var scope = app.Services.CreateScope())
+    // {
+    // var services = scope.ServiceProvider;
+    // SeedData.Initialize(services);
+    // }
 
 app.UseHttpsRedirection();
 

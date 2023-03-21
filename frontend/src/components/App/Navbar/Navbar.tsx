@@ -13,7 +13,7 @@ export const Navbar : FC<NavbarProps> = ({ loggedIn, logOut }) => {
     <nav className='navbar'>
       <div className='navbar__container container'>
         <Link to="/">
-          <img className='navbar__logo' src="../public/logo.png" alt="logo of mas" />
+          <img className='navbar__logo' src="../logo.png" alt="logo of mas" />
         </Link>
         
         {loggedIn ? <Link to="/" onClick={() => logOut()}><p>log out</p></Link> : <Link to="/login"><p>login</p></Link>} 
