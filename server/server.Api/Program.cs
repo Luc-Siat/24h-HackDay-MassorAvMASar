@@ -22,13 +22,6 @@ if (app.Environment.IsDevelopment())
 {
     // builder.Services.AddDbContext<MassorAvMasarContext>(options =>
     //     options.UseSqlServer(builder.Configuration.GetConnectionString("MassorAvMasarContext")));
-    app.UseSwagger();
-    app.UseSwaggerUI();
-    app.UseCors(policy =>    {      
-        policy.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader();  //set the allowed origin    });
-    });
 
     using (var scope = app.Services.CreateScope())
     {
@@ -36,6 +29,13 @@ if (app.Environment.IsDevelopment())
     // SeedData.Initialize(services);
     }
 }
+    app.UseSwagger();
+    app.UseSwaggerUI();
+    app.UseCors(policy =>    {      
+        policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();  //set the allowed origin    });
+    });
 // if (app.Environment.IsProduction())
 // {
 //     builder.Services.AddDbContext<MassorAvMasarContext>(options =>
