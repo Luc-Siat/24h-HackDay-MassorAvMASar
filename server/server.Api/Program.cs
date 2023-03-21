@@ -5,7 +5,7 @@ using server.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MassorAvMasarContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("SQLAZURECONNSTR_MassorAvMasarContext")));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("MassorAvMasarContext")));
 
 
 // Add services to the container.
