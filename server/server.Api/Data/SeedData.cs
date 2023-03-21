@@ -18,25 +18,25 @@ public class SeedData
             if (context.Dogs!.Any()) { return; }
 
 
-             var users = new Faker<User>()
-                    .RuleFor(a=> a.Username, f=> f.Internet.UserName()) 
-                    .RuleFor(a=> a.Password, f=> f.Internet.Password())
-                    .RuleFor(a=> a.Email, f=> f.Internet.Email())
-                    .Generate(10);
+            //  var users = new Faker<User>()
+            //         .RuleFor(a=> a.Username, f=> f.Internet.UserName()) 
+            //         .RuleFor(a=> a.Password, f=> f.Internet.Password())
+            //         .RuleFor(a=> a.Email, f=> f.Internet.Email())
+            //         .Generate(10);
 
-            var random = new String[]{"Mantrailing", "Agility", "Nosework", "Herding", "Canicross", "Mushing", "Weight pulling", "Dock jumping"};
+            // var random = new String[]{"Mantrailing", "Agility", "Nosework", "Herding", "Canicross", "Mushing", "Weight pulling", "Dock jumping"};
 
-             var sports = new List<Sport>();
-             for(var i = 0; i < (random.Count() - 1); i++){
-               sports.Add(new Sport() {
-                Name = random[i]
-               });
-             }
-            Console.WriteLine("WHAT");
+            //  var sports = new List<Sport>();
+            //  for(var i = 0; i < (random.Count() - 1); i++){
+            //    sports.Add(new Sport() {
+            //     Name = random[i]
+            //    });
+            //  }
+            // Console.WriteLine("WHAT");
 
 
-            context.Users?.AddRange(users);
-            context.Sports?.AddRange(sports);
+            // context.Users?.AddRange(users);
+            // context.Sports?.AddRange(sports);
 
             var cities = new String[] { "Stockholm", "Täby", "Huddinge", "Göteborg", "Jokkmokk", "Kista", "Växholm", "Sandhamn", "Sollentuna", "Väsby", "Visby" };
             var ImageUrl = new String[]{
@@ -253,24 +253,24 @@ public class SeedData
     "stbernard",
     };
 
-            // var gender = new string[]{"Female", "Male"};
+            var gender = new string[]{"Female", "Male"};
 
-            // var dogs = new Faker<Dog>()
-            // .RuleFor(a => a.Name, f => f.Name.FirstName())
-            // .RuleFor(a => a.Age, f => f.Random.Number(1, 15))
-            // .RuleFor(a => a.Gender, f => f.Random.ArrayElement<string>(gender))
+            var dogs = new Faker<Dog>()
+            .RuleFor(a => a.Name, f => f.Name.FirstName())
+            .RuleFor(a => a.Age, f => f.Random.Number(1, 15))
+            .RuleFor(a => a.Gender, f => f.Random.ArrayElement<string>(gender))
 
-            // .RuleFor(a => a.Race, f => f.Random.ArrayElement<string>(breeds))
-            // .RuleFor(a => a.ImageUrl, f => f.Random.ArrayElement<string>(ImageUrl))
+            .RuleFor(a => a.Race, f => f.Random.ArrayElement<string>(breeds))
+            .RuleFor(a => a.ImageUrl, f => f.Random.ArrayElement<string>(ImageUrl))
 
 
-            // .RuleFor(a => a.Location, f => f.Random.ArrayElement<string>(cities))
-            // .RuleFor(a => a.SportId, f => f.Random.Number(2, 15))
-            // .RuleFor(a => a.UserId, f => f.Random.Number(1, 40))
-            // .Generate(75);
+            .RuleFor(a => a.Location, f => f.Random.ArrayElement<string>(cities))
+            .RuleFor(a => a.SportId, f => f.Random.Number(2, 15))
+            .RuleFor(a => a.UserId, f => f.Random.Number(1, 40))
+            .Generate(75);
 
             // context.Dogs.AddRange(dogs);
-            context.SaveChanges();
+            // context.SaveChanges();
 
             // use bogus here if you can
         }
