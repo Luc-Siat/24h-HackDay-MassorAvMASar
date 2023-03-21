@@ -2,9 +2,9 @@
 
 import { IDog } from "./types";
 
-const DogsUrl = 'https://localhost:3000/api/Dogs';
-const SportsUrl = 'https://localhost:3000/api/Sports';
-const UsersUrl = 'https://localhost:3000/api/Users';
+const DogsUrl = 'https://massoravmasar.azurewebsites.net/api/Dogs';
+const SportsUrl = 'https://massoravmasar.azurewebsites.net/api/Sports';
+const UsersUrl = 'https://massoravmasar.azurewebsites.net/api/Users';
 
 
 
