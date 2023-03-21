@@ -10,7 +10,7 @@ import { Dogcard } from './components/DogCard/Dogcard'
 import { DogDetailsPage } from './components/DogPage/DogDetailsPage'
 import { About } from './components/About'
 import { IDog, ISport, IUser } from './services/types'
-import { addDog, deleteDog, getDogs, getSports, getUsers } from './services/MassorAvMasarApi'
+import { addDog, deleteDog, getDogs, getSports, getUsers, IUpdate, updateDog } from './services/MassorAvMasarApi'
 import { Login } from './components/login/Login'
 
 
@@ -48,9 +48,19 @@ function App() {
       setDogs(dogs.filter(dog => dog.dogId !== id))
   }
 
-  useEffect( () => {
-    getData();
-  }, [])
+    const UpdateDogRequest = async (id:number, imageUrl :string) => {
+      const urlRequest : IUpdate = { imageUrl :imageUrl}
+      const updateRequest = await updateDog(id, urlRequest);
+      const updatedDog = dogs.find(dog => dog.dogId === id);
+      updatedDog!.imageUrl = imageUrl;
+      const updatedDogs =  dogs.filter(dog => dog.dogId !== id)
+      updatedDogs!.push(updatedDog!);
+      setDogs(updatedDogs);
+    }
+
+    useEffect( () => {
+      getData();
+    }, [])
   
   return (
       <div className="App">
@@ -59,7 +69,7 @@ function App() {
         <Routes>
           <Route path="/" element={< Navigate to='/Dogs' />}/> 
           <Route path="/Dogs" element={<Home dogs={dogs} users={users} sports={sports} submitDog={submitDog} currentUser={currentUser} loggedIn={loggedIn} />}/>
-          <Route path="/Dogs/:id" element={<DogDetailsPage dogs={dogs} users= {users} sports={sports}          currentUser= {currentUser} 
+          <Route path="/Dogs/:id" element={<DogDetailsPage dogs={dogs} users= {users} sports={sports} updateDog={UpdateDogRequest}       currentUser= {currentUser} 
           deleteDog ={deleteDogRequest}/>} />
           <Route path="/About" element={<About />} />
           <Route path="/Login" element={<Login getCurrentUser = {getCurrentUser} users={users}/>} />
