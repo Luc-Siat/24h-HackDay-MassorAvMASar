@@ -78,7 +78,7 @@ export const DogDetailsPage :FC<DogPageProps> = ({ dogs, users, sports, currentU
             <article className="dog-details__content">
               <div className="dog-details__description">
                 <h2>About</h2>
-                  <p> Hi 👋 I am mostly looking for people close to {dog?.location} to practice and learn about {sports.find(sport => sport.sportId === dog?.sportId)?.name} </p>
+                  <p> Hi 👋 I am mostly looking for people close to {dog?.location} to practice and learn about {sports.find(sport => sport.sportId === dog?.sportId)?.name} <br/> {dog?.description}</p>
               </div>
               <div className="dog-details__user ">
                 <i className="fa-solid fa-dog"></i>
