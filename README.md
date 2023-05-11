@@ -6,10 +6,13 @@ Massor Av Masar is a 24hours project with the following requirements:
 - has backend
 
 Tech stack: 
-- C# with Entity Framework
-- React with Typescript
-- Azure static webpage, Azure web app services and Azure sql database
-- Github actions
+  - C# with Entity Framework
+  - React
+  - TypeScript
+  - HTML/CSS
+  - Github Actions & Project
+  - Azure Sql DB, Azure web app services & Azure static webpages
+  - Figma & Excalidraw
 
 Some context:
 
