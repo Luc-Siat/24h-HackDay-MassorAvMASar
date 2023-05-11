@@ -1,4 +1,4 @@
-# 24h-HackDay MassorAvMASar
+[# 24h-HackDay MassorAvMASar](https://red-bay-0e82f7003.2.azurestaticapps.net)
 
 Massor Av Masar is a 24hours project with the following requirements: 
 - has a DB
