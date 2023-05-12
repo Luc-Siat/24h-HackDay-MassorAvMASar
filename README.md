@@ -1,6 +1,6 @@
 # 24h-HackDay MassorAvMASar
 
-Massor Av Masar is a 24hours project with the following requirements: 
+[Massor Av Masar](https://red-bay-0e82f7003.2.azurestaticapps.net) is a 24hours project with the following requirements: 
 - has a DB
 - has frontend
 - has backend
